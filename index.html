@@ -1,12 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Teste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sytles/style.css">
+    <link rel="shortcut icon" type="image/png" href="./imagens/favicon.png"/>
+    <!-- Adicione a referência ao Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>ELAISE - Controle de Moradores</title>
+    <script>
+        function handleMostrarSenha() {
+            var passwordInput = document.getElementById("senha");
+            var togglePassword = document.querySelector('.toggle-password');
+
+            
+            var type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            
+            togglePassword.classList.toggle('fa-eye-slash');
+        }
+        
+        window.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('login-form');
+            
+           
+        });
+    </script>
 </head>
-<body>
-    <h1>Hello World, is it test!!</h1>
-    <a href="vendas.html">Ir</a>
+<body class="container">
+    <div class="login-card">
+        <form id="login-form" method="POST" action="autenticacao.php">
+            <h1>Controle</h1>
+            <div class="inserir">
+                <label class="usertext" for="usuario">Usuário:</label>
+                <div>
+                    <input class="user" type="text" id="usuario" name="usuario" required>
+                </div>
+                <br>
+                <label class="senhatext" for="senha">Senha:</label>
+                <div class="password-input">
+                    <input class="senha" type="password" id="senha" name="senha" required>
+                    <!-- Ícone de mostrar/ocultar senha -->
+                    <i class="fas fa-eye-slash toggle-password" onclick="handleMostrarSenha()" color="black"></i>
+                </div>
+                <br>
+                <button class="button" type="submit">Entrar</button>
+                <div>
+                <img class="etec" src="./imagens/etec.png">
+            </div>
+            </div>
+        </form>
+    </div>
+    <!-- Adicione a referência ao script do Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
